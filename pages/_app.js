@@ -1,6 +1,6 @@
-import React from "react";
-import App, { Container } from "next/app";
 import axios from "axios";
+import App from "next/app";
+import React from "react";
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -19,9 +19,7 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     axios.defaults.headers.common["Authorization"] = `Bearer in _app.render`;
     return (
-      <Container>
         <Component {...pageProps} />
-      </Container>
     );
   }
 }
